@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+@import "leaflet.markercluster/dist/MarkerCluster.css";
+@import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+
+/* Custom Leaflet Map Container & Controls */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  z-index: 1;
+}
+
+/* Custom School Marker */
+.school-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.school-pin.selected {
+  transform: scale(1.28);
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #2563eb, 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  z-index: 9999 !important;
+}
+
+.school-pin-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  border: 1.5px solid #ffffff;
+}
+
+/* District Label Overlay */
+.district-label {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  pointer-events: none !important;
+  white-space: nowrap;
+}
+
+/* Custom Popup */
+.custom-leaflet-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-leaflet-popup .leaflet-popup-content {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.custom-leaflet-popup .leaflet-popup-close-button {
+  top: 10px;
+  right: 10px;
+  color: #94a3b8;
+  padding: 4px;
+}
+.custom-leaflet-popup .leaflet-popup-close-button:hover {
+  color: #1e293b;
+}
